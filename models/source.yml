@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: sources
+    database: api-project-508739316598
+    schema: northwind
+    tables:
+        - name: categories
+        - name: products
+        - name: suppliers
+        - name: employees
+        - name: order_details
+        - name: customers
+        - name: caregories
+        - name: orders
+        - name: shippers
