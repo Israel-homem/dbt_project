@@ -2,10 +2,16 @@ name: 'dbt_bigquery_project'
 version: '1.0'
 config-version: 2
 
-profile: 'default'
+vars:
+  category: Seafood
+
+profile: 'northwind'
 
 model-paths: ["models"]
 
 models:
   dbt_bigquery_project:
-    +materialized: view
+    +pre-hook:
+      - "{{ log_event('START') }}"
+    +post-hook:
+      - "{{ log_event('END') }}"      
